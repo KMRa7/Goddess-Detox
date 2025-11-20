@@ -537,243 +537,243 @@
     <!-- LIFF SDK -->
     <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
     <script>
-        let oneCount = '';
-        let twoCount = '';
-        let threeCount = '';
-        let fourCount = '';
-        let fiveCount = '';
-        let sixCount = '';
-        let sevenCount = '';
-        let eightCount = '';
-        let nineCount = '';
-        let tenCount = '';
-        let elevenCount = '';
-        let twelveCount = '';
-        let thirteenCount = '';
-        let fourteenCount = '';
+    let oneCount = '';
+    let twoCount = '';
+    let threeCount = '';
+    let fourCount = '';
+    let fiveCount = '';
+    let sixCount = '';
+    let sevenCount = '';
+    let eightCount = '';
+    let nineCount = '';
+    let tenCount = '';
+    let elevenCount = '';
+    let twelveCount = '';
+    let thirteenCount = '';
+    let fourteenCount = '';
 
-        // LIFF初期化
-        document.addEventListener('DOMContentLoaded', function () {
-            liff.init({
-                liffId: '2008536428-Lxmp8MpE' // ★自分のLIFF IDに変更
-            }).then(() => {
-                console.log('LIFF初期化成功');
-            }).catch((err) => {
-                console.error('LIFF初期化失敗', err);
-            });
+    // LIFF初期化
+    document.addEventListener('DOMContentLoaded', function () {
+        liff.init({
+            liffId: '2008536428-Lxmp8MpE' // ★自分のLIFF IDに変更
+        }).then(() => {
+            console.log('LIFF初期化成功');
+        }).catch((err) => {
+            console.error('LIFF初期化失敗', err);
         });
+    });
 
-        // ピンチズーム対策
-        document.addEventListener('touchmove', function (event) {
-            if (event.scale !== 1) {
-                event.preventDefault();
-            }
-        }, { passive: false });
-    
-        // ダブルタップズーム対策
-        let lastTouchEnd = 0;
-        document.addEventListener('touchend', function (event) {
-            const now = Date.now();
-            if (now - lastTouchEnd <= 300) {
-                event.preventDefault();
-            }
-            lastTouchEnd = now;
-        }, false);
-                
-        // ボタン系（1〜14問）は元のコードと同じ動き
-        function selectone(element) {
-            const buttons = document.querySelectorAll('.one-buttons button');
-            buttons.forEach(button => button.classList.remove('active'));
-            element.classList.add('active');
-            oneCount = element.innerText;
+    // ピンチズーム対策
+    document.addEventListener('touchmove', function (event) {
+        if (event.scale !== 1) {
+            event.preventDefault();
+        }
+    }, { passive: false });
+
+    // ダブルタップズーム対策
+    let lastTouchEnd = 0;
+    document.addEventListener('touchend', function (event) {
+        const now = Date.now();
+        if (now - lastTouchEnd <= 300) {
+            event.preventDefault();
+        }
+        lastTouchEnd = now;
+    }, false);
+
+    // ボタン系（1〜14問）
+    function selectone(element) {
+        const buttons = document.querySelectorAll('.one-buttons button');
+        buttons.forEach(button => button.classList.remove('active'));
+        element.classList.add('active');
+        oneCount = element.innerText;
+    }
+
+    function selecttwo(element) {
+        const buttons = document.querySelectorAll('.two-buttons button');
+        buttons.forEach(button => button.classList.remove('active'));
+        element.classList.add('active');
+        twoCount = element.innerText;
+    }
+
+    function selectthree(element) {
+        const buttons = document.querySelectorAll('.three-buttons button');
+        buttons.forEach(button => button.classList.remove('active'));
+        element.classList.add('active');
+        threeCount = element.innerText;
+    }
+
+    function selectfour(element) {
+        const buttons = document.querySelectorAll('.four-buttons button');
+        buttons.forEach(button => button.classList.remove('active'));
+        element.classList.add('active');
+        fourCount = element.innerText;
+    }
+
+    function selectfive(element) {
+        const buttons = document.querySelectorAll('.five-buttons button');
+        buttons.forEach(button => button.classList.remove('active'));
+        element.classList.add('active');
+        fiveCount = element.innerText;
+    }
+
+    function selectsix(element) {
+        const buttons = document.querySelectorAll('.six-buttons button');
+        buttons.forEach(button => button.classList.remove('active'));
+        element.classList.add('active');
+        sixCount = element.innerText;
+    }
+
+    function selectseven(element) {
+        const buttons = document.querySelectorAll('.seven-buttons button');
+        buttons.forEach(button => button.classList.remove('active'));
+        element.classList.add('active');
+        sevenCount = element.innerText;
+    }
+
+    function selecteight(element) {
+        const buttons = document.querySelectorAll('.eight-buttons button');
+        buttons.forEach(button => button.classList.remove('active'));
+        element.classList.add('active');
+        eightCount = element.innerText;
+    }
+
+    function selectnine(element) {
+        const buttons = document.querySelectorAll('.nine-buttons button');
+        buttons.forEach(button => button.classList.remove('active'));
+        element.classList.add('active');
+        nineCount = element.innerText;
+    }
+
+    function selectten(element) {
+        const buttons = document.querySelectorAll('.ten-buttons button');
+        buttons.forEach(button => button.classList.remove('active'));
+        element.classList.add('active');
+        tenCount = element.innerText;
+    }
+
+    function selecteleven(element) {
+        const buttons = document.querySelectorAll('.eleven-buttons button');
+        buttons.forEach(button => button.classList.remove('active'));
+        element.classList.add('active');
+        elevenCount = element.innerText;
+    }
+
+    function selecttwelve(element) {
+        const buttons = document.querySelectorAll('.twelve-buttons button');
+        buttons.forEach(button => button.classList.remove('active'));
+        element.classList.add('active');
+        twelveCount = element.innerText;
+    }
+
+    function selectthirteen(element) {
+        const buttons = document.querySelectorAll('.thirteen-buttons button');
+        buttons.forEach(button => button.classList.remove('active'));
+        element.classList.add('active');
+        thirteenCount = element.innerText;
+    }
+
+    function selectfourteen(element) {
+        const buttons = document.querySelectorAll('.fourteen-buttons button');
+        buttons.forEach(button => button.classList.remove('active'));
+        element.classList.add('active');
+        fourteenCount = element.innerText;
+    }
+
+    // 共通ヘルパー
+    function getCheckedValues(name) {
+        return Array.from(document.querySelectorAll('input[name="' + name + '"]:checked'))
+            .map(el => el.value);
+    }
+
+    function getRadioValue(name) {
+        const el = document.querySelector('input[name="' + name + '"]:checked');
+        return el ? el.value : '';
+    }
+
+    function submitForm() {
+        // 基本情報
+        const name = document.getElementById('name').value.trim();
+        const treatmentDate = document.getElementById('treatmentDate').value;
+        const contact = document.getElementById('contact').value.trim();
+        const birth = document.getElementById('birth').value;
+        const address = document.getElementById('address').value.trim();
+
+        // 詳細テキスト
+        const q2_detail = document.getElementById('q2_detail').value.trim();
+        const q4_detail = document.getElementById('q4_detail').value.trim();
+        const q6_detail = document.getElementById('q6_detail').value.trim();
+        const q7_detail = document.getElementById('q7_detail').value.trim();
+        const q8_detail = document.getElementById('q8_detail').value.trim();
+        const q11_detail = document.getElementById('q11_detail').value.trim();
+        const q13_detail = document.getElementById('q13_detail').value.trim();
+
+        // バリデーション（必要なものだけ）
+        if (!name) {
+            alert('氏名を入力してください。');
+            return;
+        }
+        if (!contact) {
+            alert('連絡先を入力してください。');
+            return;
+        }
+        if (!birth) {
+            alert('生年月日を入力してください。');
+            return;
+        }
+        if (!address) {
+            alert('住所を入力してください。');
+            return;
         }
 
-        function selecttwo(element) {
-            const buttons = document.querySelectorAll('.two-buttons button');
-            buttons.forEach(button => button.classList.remove('active'));
-            element.classList.add('active');
-            twoCount = element.innerText;
-        }
+        if (!oneCount) { alert('1. 現在妊娠しておられますか？を選択してください。'); return; }
+        if (!twoCount) { alert('2. 薬・食品・化粧品などの質問を選択してください。'); return; }
+        if (!threeCount) { alert('3. ひきつけ、痙攣を起こしたことはありますか？を選択してください。'); return; }
+        if (!fourCount) { alert('4. 今までに特別な病気にかかり医師の診断を受けていますか？を選択してください。'); return; }
+        if (!fiveCount) { alert('5. 最近1ヶ月の病気の質問を選択してください。'); return; }
+        if (!sixCount) { alert('6. 最近1週間の間に風邪ひきリンパ腺が腫れましたか？を選択してください。'); return; }
+        if (!sevenCount) { alert('7. 今日普段と違って具合の悪いところがありますか？を選択してください。'); return; }
+        if (!eightCount) { alert('8. 現在、別のエステサロンに通われていますか？を選択してください。'); return; }
+        if (!nineCount) { alert('9. 痩身を受けてたことがありますか？を選択してください。'); return; }
+        if (!tenCount) { alert('10. 最近サウナ風呂によく通いますか？を選択してください。'); return; }
+        if (!elevenCount) { alert('11. 美容整形を受けられていますか？を選択してください。'); return; }
+        if (!twelveCount) { alert('12. 現在ペースメーカーをご利用になられていますか？を選択してください。'); return; }
+        if (!thirteenCount) { alert('13. ボルトや金属を体内に入れていますか？を選択してください。'); return; }
+        if (!fourteenCount) { alert('14. マッサージを受けた時に発熱や異常反応を起こしたことがありますか？を選択してください。'); return; }
 
-        function selectthree(element) {
-            const buttons = document.querySelectorAll('.three-buttons button');
-            buttons.forEach(button => button.classList.remove('active'));
-            element.classList.add('active');
-            threeCount = element.innerText;
-        }
+        // 体調チェック
+        const conditions = getCheckedValues('condition');
+        const conditionText = conditions.length
+            ? conditions.map(v => '□ ' + v).join('\n')
+            : '（チェックなし）';
 
-        function selectfour(element) {
-            const buttons = document.querySelectorAll('.four-buttons button');
-            buttons.forEach(button => button.classList.remove('active'));
-            element.classList.add('active');
-            fourCount = element.innerText;
-        }
+        // 食生活
+        const mealCount = document.getElementById('mealCount').value.trim();
+        const regularMeals = getRadioValue('regularMeals');
+        const eatingOutWeek = document.getElementById('eatingOutWeek').value.trim();
+        const eatingOutCount = document.getElementById('eatingOutCount').value.trim();
+        const fastFoodWeek = document.getElementById('fastFoodWeek').value.trim();
+        const fastFoodCount = document.getElementById('fastFoodCount').value.trim();
+        const snackWeek = document.getElementById('snackWeek').value.trim();
+        const snackCount = document.getElementById('snackCount').value.trim();
+        const snackPerDay = document.getElementById('snackPerDay').value.trim();
+        const snackNote = document.getElementById('snackNote').value.trim();
 
-        function selectfive(element) {
-            const buttons = document.querySelectorAll('.five-buttons button');
-            buttons.forEach(button => button.classList.remove('active'));
-            element.classList.add('active');
-            fiveCount = element.innerText;
-        }
+        const waterL = document.getElementById('waterL').value.trim();
+        const waterMl = document.getElementById('waterMl').value.trim();
+        const teaL = document.getElementById('teaL').value.trim();
+        const teaMl = document.getElementById('teaMl').value.trim();
+        const otherDrinkL = document.getElementById('otherDrinkL').value.trim();
+        const otherDrinkMl = document.getElementById('otherDrinkMl').value.trim();
 
-        function selectsix(element) {
-            const buttons = document.querySelectorAll('.six-buttons button');
-            buttons.forEach(button => button.classList.remove('active'));
-            element.classList.add('active');
-            sixCount = element.innerText;
-        }
+        const carbAmount = getRadioValue('carbAmount');
+        const sugarAmount = getRadioValue('sugarAmount');
+        const fatAmount = getRadioValue('fatAmount');
+        const fatType = getRadioValue('fatType');
+        const proteinAmount = getRadioValue('proteinAmount');
+        const proteinType = getRadioValue('proteinType');
 
-        function selectseven(element) {
-            const buttons = document.querySelectorAll('.seven-buttons button');
-            buttons.forEach(button => button.classList.remove('active'));
-            element.classList.add('active');
-            sevenCount = element.innerText;
-        }
-
-        function selecteight(element) {
-            const buttons = document.querySelectorAll('.eight-buttons button');
-            buttons.forEach(button => button.classList.remove('active'));
-            element.classList.add('active');
-            eightCount = element.innerText;
-        }
-
-        function selectnine(element) {
-            const buttons = document.querySelectorAll('.nine-buttons button');
-            buttons.forEach(button => button.classList.remove('active'));
-            element.classList.add('active');
-            nineCount = element.innerText;
-        }
-
-        function selectten(element) {
-            const buttons = document.querySelectorAll('.ten-buttons button');
-            buttons.forEach(button => button.classList.remove('active'));
-            element.classList.add('active');
-            tenCount = element.innerText;
-        }
-
-        function selecteleven(element) {
-            const buttons = document.querySelectorAll('.eleven-buttons button');
-            buttons.forEach(button => button.classList.remove('active'));
-            element.classList.add('active');
-            elevenCount = element.innerText;
-        }
-
-        function selecttwelve(element) {
-            const buttons = document.querySelectorAll('.twelve-buttons button');
-            buttons.forEach(button => button.classList.remove('active'));
-            element.classList.add('active');
-            twelveCount = element.innerText;
-        }
-
-        function selectthirteen(element) {
-            const buttons = document.querySelectorAll('.thirteen-buttons button');
-            buttons.forEach(button => button.classList.remove('active'));
-            element.classList.add('active');
-            thirteenCount = element.innerText;
-        }
-
-        function selectfourteen(element) {
-            const buttons = document.querySelectorAll('.fourteen-buttons button');
-            buttons.forEach(button => button.classList.remove('active'));
-            element.classList.add('active');
-            fourteenCount = element.innerText;
-        }
-
-        // 共通ヘルパー
-        function getCheckedValues(name) {
-            return Array.from(document.querySelectorAll('input[name="' + name + '"]:checked'))
-                .map(el => el.value);
-        }
-
-        function getRadioValue(name) {
-            const el = document.querySelector('input[name="' + name + '"]:checked');
-            return el ? el.value : '';
-        }
-
-        function submitForm() {
-            // 基本情報
-            const name = document.getElementById('name').value.trim();
-            const treatmentDate = document.getElementById('treatmentDate').value;
-            const contact = document.getElementById('contact').value.trim();
-            const birth = document.getElementById('birth').value;
-            const address = document.getElementById('address').value.trim();
-
-            // 詳細テキスト
-            const q2_detail = document.getElementById('q2_detail').value.trim();
-            const q4_detail = document.getElementById('q4_detail').value.trim();
-            const q6_detail = document.getElementById('q6_detail').value.trim();
-            const q7_detail = document.getElementById('q7_detail').value.trim();
-            const q8_detail = document.getElementById('q8_detail').value.trim();
-            const q11_detail = document.getElementById('q11_detail').value.trim();
-            const q13_detail = document.getElementById('q13_detail').value.trim();
-
-            // バリデーション（必要なものだけ）
-            if (!name) {
-                alert('氏名を入力してください。');
-                return;
-            }
-            if (!contact) {
-                alert('連絡先を入力してください。');
-                return;
-            }
-            if (!birth) {
-                alert('生年月日を入力してください。');
-                return;
-            }
-            if (!address) {
-                alert('住所を入力してください。');
-                return;
-            }
-
-            if (!oneCount) { alert('1. 現在妊娠しておられますか？を選択してください。'); return; }
-            if (!twoCount) { alert('2. 薬・食品・化粧品などの質問を選択してください。'); return; }
-            if (!threeCount) { alert('3. ひどいかゆみの質問を選択してください。'); return; }
-            if (!fourCount) { alert('4. 特別な病気の質問を選択してください。'); return; }
-            if (!fiveCount) { alert('5. 最近1ヶ月の病気の質問を選択してください。'); return; }
-            if (!sixCount) { alert('6. 最近1週間の風邪などの質問を選択してください。'); return; }
-            if (!sevenCount) { alert('7. 今日の体調の質問を選択してください。'); return; }
-            if (!eightCount) { alert('8. 別のエステサロンの質問を選択してください。'); return; }
-            if (!nineCount) { alert('9. 痩身の経験の質問を選択してください。'); return; }
-            if (!tenCount) { alert('10. サウナ風呂の質問を選択してください。'); return; }
-            if (!elevenCount) { alert('11. 美容整形の質問を選択してください。'); return; }
-            if (!twelveCount) { alert('12. ペースメーカーの質問を選択してください。'); return; }
-            if (!thirteenCount) { alert('13. ボルトや金属の質問を選択してください。'); return; }
-            if (!fourteenCount) { alert('14. マッサージ時の反応の質問を選択してください。'); return; }
-
-            // 体調チェック
-            const conditions = getCheckedValues('condition');
-            const conditionText = conditions.length
-                ? conditions.map(v => '□ ' + v).join('\n')
-                : '（チェックなし）';
-
-            // 食生活
-            const mealCount = document.getElementById('mealCount').value.trim();
-            const regularMeals = getRadioValue('regularMeals');
-            const eatingOutWeek = document.getElementById('eatingOutWeek').value.trim();
-            const eatingOutCount = document.getElementById('eatingOutCount').value.trim();
-            const fastFoodWeek = document.getElementById('fastFoodWeek').value.trim();
-            const fastFoodCount = document.getElementById('fastFoodCount').value.trim();
-            const snackWeek = document.getElementById('snackWeek').value.trim();
-            const snackCount = document.getElementById('snackCount').value.trim();
-            const snackPerDay = document.getElementById('snackPerDay').value.trim();
-            const snackNote = document.getElementById('snackNote').value.trim();
-
-            const waterL = document.getElementById('waterL').value.trim();
-            const waterMl = document.getElementById('waterMl').value.trim();
-            const teaL = document.getElementById('teaL').value.trim();
-            const teaMl = document.getElementById('teaMl').value.trim();
-            const otherDrinkL = document.getElementById('otherDrinkL').value.trim();
-            const otherDrinkMl = document.getElementById('otherDrinkMl').value.trim();
-
-            const carbAmount = getRadioValue('carbAmount');
-            const sugarAmount = getRadioValue('sugarAmount');
-            const fatAmount = getRadioValue('fatAmount');
-            const fatType = getRadioValue('fatType');
-            const proteinAmount = getRadioValue('proteinAmount');
-            const proteinType = getRadioValue('proteinType');
-
-            // 送信用テキスト整形
-            const counselingText =
+        // 送信用テキスト整形（bodyの表示に合わせて修正）
+        const counselingText =
 `≪カウンセリングシート≫
 【氏名】${name}
 【施術日】${treatmentDate}
@@ -788,17 +788,19 @@
 ・${twoCount}
 　詳細：${q2_detail || 'なし'}
 
-3. ひどいかゆみ、痒疹を起こしたことはありますか？
+3. ひきつけ、痙攣を起こしたことはありますか？
 ・${threeCount}
 
-4. 特別な病気にかかり医師の診断を受けていますか？
+4. 今までに特別な病気
+（先天性異常・心臓・肝臓・腎臓免疫不全症・その他の病気）
+にかかり医師の診断を受けていますか？
 ・${fourCount}
 　具体的に：${q4_detail || 'なし'}
 
 5. 最近1ヶ月の間に病気にかかりましたか？
 ・${fiveCount}
 
-6. 最近1週間の間に風邪やむくみ、リンパ腺が腫れましたか？
+6. 最近1週間の間に風邪ひきリンパ腺が腫れましたか？
 ・${sixCount}
 　病名など：${q6_detail || 'なし'}
 
@@ -810,13 +812,14 @@
 ・${eightCount}
 　施術名：${q8_detail || 'なし'}
 
-9. 痩身を受けたことがありますか？
+9. 痩身を受けてたことがありますか？
 ・${nineCount}
 
 10. 最近サウナ風呂によく通いますか？
 ・${tenCount}
 
 11. 美容整形を受けられていますか？
+また、その部位は？
 ・${elevenCount}
 　部位：${q11_detail || 'なし'}
 
@@ -824,50 +827,51 @@
 ・${twelveCount}
 
 13. ボルトや金属を体内に入れていますか？
+また、その部位は？
 ・${thirteenCount}
 　部位：${q13_detail || 'なし'}
 
-14. マッサージを受けた時に発疹や異常反応を起こしたことがありますか？
+14. マッサージを受けた時に発熱や異常反応を起こしたことがありますか？
 ・${fourteenCount}`;
 
-            const checkSheetText =
+        const checkSheetText =
 `〈体調チェック項目〉
 ${conditionText}
 
 〈食生活に関するチェックリスト〉
 1日の食事の回数：${mealCount || '未記入'} 回
-食事の間隔は規則的ですか？：${regularMeals || '未記入'}
+食事の時間は規則的ですか？：${regularMeals || '未記入'}
 
 外食の回数：${eatingOutWeek || '－'} 週　${eatingOutCount || '－'} 回
-ファーストフード：${fastFoodWeek || '－'} 週　${fastFoodCount || '－'} 回
-間食（おやつ等）：${snackWeek || '－'} 週　${snackCount || '－'} 回（1日 ${snackPerDay || '－'} 回）
+ファーストフードを食べる回数：${fastFoodWeek || '－'} 週　${fastFoodCount || '－'} 回
+間食（おやつ等）の回数：${snackWeek || '－'} 週　${snackCount || '－'} 回（1日 ${snackPerDay || '－'} 回）
 頻度メモ：${snackNote || 'なし'}
 
-飲み物（1日あたり）
+飲み物は1日にどのくらい飲みますか？
 ・水：${waterL || '－'} L / ${waterMl || '－'} ml
 ・お茶：${teaL || '－'} L / ${teaMl || '－'} ml
-・その他：${otherDrinkL || '－'} L / ${otherDrinkMl || '－'} ml
+・その他（缶コーヒー、ジュース等）：${otherDrinkL || '－'} L / ${otherDrinkMl || '－'} ml
 
-食事の傾向
+食事の傾向をお答えください
 ・炭水化物：${carbAmount || '未記入'}
 ・糖質：${sugarAmount || '未記入'}
 ・脂質：${fatAmount || '未記入'}（${fatType || '種類 未記入'}）
 ・蛋白質：${proteinAmount || '未記入'}（${proteinType || '種類 未記入'}）`;
 
-            const sendText = counselingText + "\n\n" + checkSheetText;
+        const sendText = counselingText + "\n\n" + checkSheetText;
 
-            liff.sendMessages([{
-                type: 'text',
-                text: sendText
-            }]).then(() => {
-                alert('ご記入ありがとうございます。');
-                liff.closeWindow();
-            }).catch((err) => {
-                console.error('メッセージの送信に失敗しました', err);
-                alert('送信に失敗しました。時間をおいて再度お試しください。');
-            });
-        }
-    </script>
+        liff.sendMessages([{
+            type: 'text',
+            text: sendText
+        }]).then(() => {
+            alert('ご記入ありがとうございます。');
+            liff.closeWindow();
+        }).catch((err) => {
+            console.error('メッセージの送信に失敗しました', err);
+            alert('送信に失敗しました。時間をおいて再度お試しください。');
+        });
+    }
+</script>
 </body>
 
 </html>
