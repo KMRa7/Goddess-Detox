@@ -3,7 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>カウンセリングシート / チェックシート</title>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <style>
@@ -562,6 +563,23 @@
             });
         });
 
+        // ピンチズーム対策
+        document.addEventListener('touchmove', function (event) {
+            if (event.scale !== 1) {
+                event.preventDefault();
+            }
+        }, { passive: false });
+    
+        // ダブルタップズーム対策
+        let lastTouchEnd = 0;
+        document.addEventListener('touchend', function (event) {
+            const now = Date.now();
+            if (now - lastTouchEnd <= 300) {
+                event.preventDefault();
+            }
+            lastTouchEnd = now;
+        }, false);
+                
         // ボタン系（1〜14問）は元のコードと同じ動き
         function selectone(element) {
             const buttons = document.querySelectorAll('.one-buttons button');
@@ -679,7 +697,6 @@
             const contact = document.getElementById('contact').value.trim();
             const birth = document.getElementById('birth').value;
             const address = document.getElementById('address').value.trim();
-            const staff = document.getElementById('staff').value.trim();
 
             // 詳細テキスト
             const q2_detail = document.getElementById('q2_detail').value.trim();
@@ -736,7 +753,6 @@
             const eatingOutCount = document.getElementById('eatingOutCount').value.trim();
             const fastFoodWeek = document.getElementById('fastFoodWeek').value.trim();
             const fastFoodCount = document.getElementById('fastFoodCount').value.trim();
-            const fastFoodPerDay = document.getElementById('fastFoodPerDay').value.trim();
             const snackWeek = document.getElementById('snackWeek').value.trim();
             const snackCount = document.getElementById('snackCount').value.trim();
             const snackPerDay = document.getElementById('snackPerDay').value.trim();
@@ -823,7 +839,7 @@ ${conditionText}
 食事の間隔は規則的ですか？：${regularMeals || '未記入'}
 
 外食の回数：${eatingOutWeek || '－'} 週　${eatingOutCount || '－'} 回
-ファーストフード：${fastFoodWeek || '－'} 週　${fastFoodCount || '－'} 回（1日 ${fastFoodPerDay || '－'} 回）
+ファーストフード：${fastFoodWeek || '－'} 週　${fastFoodCount || '－'} 回
 間食（おやつ等）：${snackWeek || '－'} 週　${snackCount || '－'} 回（1日 ${snackPerDay || '－'} 回）
 頻度メモ：${snackNote || 'なし'}
 
